@@ -44,11 +44,12 @@ const Logo = styled.img`
 
 const Nav = styled.nav`
   height: 70px;
-  background-color: black;
-  color: white;
+  background-color: #090b13;
   display: flex;
   align-items: center;
   padding: 0 36px;
+  overflow-x: hidden;
+
 `;
 const NavMenu = styled.div`
   display: flex;
@@ -60,19 +61,43 @@ const NavMenu = styled.div`
 
   a {
     display: flex;
-    align-items: center; //it wiil center verticaly
-    padding: 0 12px;
-    gap: 5px;
+    align-items: center; // It will center vertically
+    // padding: 0 12px;
+    letter-spacing: 1.42px;
+    // gap: 5px;
+    position: relative;
 
     img {
       height: 20px;
     }
+
     span {
       font-size: 13px;
       letter-spacing: 1.42px;
+      position: relative;
+
+      &:after {
+        content: "";
+        height: 2px;
+        background: white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -6px; // Adjust this value to move the underline up or down
+        opacity: 0;
+        transform: scaleX(0); // Initially hidden
+        transition: all 0.25s ease-in-out;
+      }
+    }
+
+    &:hover 
+    span:after {
+      opacity: 1;
+      transform: scaleX(1); // On hover, it will expand the underline
     }
   }
 `;
+
 
 const UserImg = styled.img`
   height: 48px;
