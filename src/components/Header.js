@@ -4,22 +4,22 @@ import styled from "styled-components";
 function Header() {
   return (
     <Nav>
-      <Logo src="/images/logo.svg" />
+      <Logo src="/Images/Logo.svg" />
       <NavMenu>
         <a>
-          <img src="/images/home-icon.svg" />
+          <img src="/images/home-icon.svg" alt="" />
           <span>HOME</span>
         </a>
         <a>
-          <img src="/images/search-icon.svg" />
+          <img src="/images/search-icon.svg" alt="" />
           <span>SEARCH</span>
         </a>
         <a>
-          <img src="/images/watchlist-icon.svg" />
+          <img src="/images/watchlist-icon.svg" alt="" />
           <span>WATCHLIST</span>
         </a>
         <a>
-          <img src="/images/original-icon.svg" />
+          <img src="/images/original-icon.svg" alt="" />
           <span>ORIGINAL</span>
         </a>
         <a>
@@ -27,20 +27,16 @@ function Header() {
           <span>MOVIES</span>
         </a>
         <a>
-          <img src="/images/series-icon.svg" />
+          <img src="/images/series-icon.svg" alt="" />
           <span>SERIES</span>
         </a>
       </NavMenu>
-      <UserImg src="/images/zubair.jpg" />
+      <UserImg src='/Images/zubair.jpg' alt="" />
     </Nav>
   );
 }
 
 export default Header;
-
-const Logo = styled.img`
-  width: 80px;
-`;
 
 const Nav = styled.nav`
   height: 70px;
@@ -48,24 +44,26 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   padding: 0 36px;
-  overflow-x: hidden;
-
+  position: sticky;
+  top: 0;
+  z-index: 100;
 `;
+
+const Logo = styled.img`
+  width: 80px;
+`;
+
 const NavMenu = styled.div`
   display: flex;
-  margin-left: 40px;
-  gap: 20px;
   flex: 1;
-  cursor: pointer;
+  margin-left: 25px;
   align-items: center;
 
   a {
     display: flex;
-    align-items: center; // It will center vertically
-    // padding: 0 12px;
-    letter-spacing: 1.42px;
-    // gap: 5px;
-    position: relative;
+    align-items: center;
+    padding: 0 12px;
+    cursor: pointer;
 
     img {
       height: 20px;
@@ -83,25 +81,27 @@ const NavMenu = styled.div`
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -6px; // Adjust this value to move the underline up or down
+        bottom: -6px;
         opacity: 0;
-        transform: scaleX(0); // Initially hidden
-        transition: all 0.25s ease-in-out;
+        transform-origin: left center;
+        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+        transform: scaleX(0);
       }
     }
 
-    &:hover 
-    span:after {
-      opacity: 1;
-      transform: scaleX(1); // On hover, it will expand the underline
+    &:hover {
+      span:after {
+        transform: scaleX(1);
+        opacity: 1;
+      }
     }
   }
 `;
 
-
 const UserImg = styled.img`
-  height: 48px;
   width: 48px;
-  border-radius: 100px;
+  height: 48px;
+  border-radius: 50%;
   cursor: pointer;
+  overflow-x: hidden;
 `;

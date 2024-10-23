@@ -1,44 +1,36 @@
-import React from 'react'
-import styled from 'styled-components'
-import Viewers from './Viewers'
-import ImageSlider from './ImageSlider'
+import React from "react";
+import styled from "styled-components";
+import ImageSlider from "./ImageSlider";
+import Viewers from "./Viewers";
+import Movies from "./Movies";
 
-function Home() {                         //its home because it will containe multiple components
+function Home() {
   return (
     <Container>
-      <ImageSlider/>
-      <Viewers/>
-      
+      <ImageSlider />
+      <Viewers />
+      <Movies />
     </Container>
-  )
+  );
 }
 
-export default Home
+export default Home;
 
 const Container = styled.div`
-     min-height: calc(100vh - 70px);
-     padding: 0 call(3.5vw + 5px);
-     position: relative;
-     overflow-x:hidden;
+  min-height: calc(100vh - 70px);
+  padding: 0 calc(3.5vw + 5px);
+  position: relative;
+  overflow-x: hidden;
 
-     &:before{
-     
-      background: url("/images/home-background.png")  center center /cover  
+  &:before {
+    background: url("/images/home-background.png") center center / cover
       no-repeat fixed;
-      content: "";
-      position: absolute;
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-      z-index: -1;
-
-  
-     
-     }
-     
-
-
-
-
-`
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+`;
