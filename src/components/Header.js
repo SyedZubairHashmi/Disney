@@ -1,3 +1,4 @@
+
 import React from "react";
 import styled from "styled-components";
 
@@ -31,7 +32,7 @@ function Header() {
           <span>SERIES</span>
         </a>
       </NavMenu>
-      <UserImg src='/Images/zubair.jpg' alt="" />
+      <UserImg src='/Images/profile.jpg' alt="" />
     </Nav>
   );
 }
